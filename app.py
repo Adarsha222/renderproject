@@ -6,7 +6,7 @@ import os
 app = Flask(__name__, template_folder='templates')
 
 # Load the trained model with greetings included
-model = joblib.load('ml_chatbot_model_with_greetings.pkl')
+model = joblib.load('ml_chatbot_model_diverse.pkl')
 
 @app.route('/')
 def home():
@@ -49,6 +49,7 @@ def get_response(category):
     "benefits": "By completing the course, you'll gain practical skills in ML, earn a certificate, and improve your job prospects.",
     "study_method": "The course uses a mix of pre-recorded video lessons and assignments. Occasionally, there are interactions with professors through Q&A or webinars.",
     "goodbye": "Glad I could help! Let me know if you have more questions. 😊"
+    "find_presentation": "Here is the presentation link:https://docs.google.com/presentation/d/1BjuMFQwYLk3TJxhUdZAafXC5Q1Df1SA0/edit?slide=id.p11#slide=id.p11"
     }
     return responses.get(category, "Sorry, I don't understand that question.")
 
